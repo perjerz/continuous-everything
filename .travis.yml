@@ -1,23 +1,28 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 dist: trusty
 sudo: false
 branches:
   only:
-    - master
+  - master
 addons:
   chrome: stable
 cache:
   directories:
-    - ./node_modules
+  - "./node_modules"
 install:
-  - npm install -g npm@latest
-  - npm install -g @angular/cli@latest
-  - npm ci
+- npm install -g npm@latest
+- npm install -g @angular/cli@latest
+- npm ci
 script:
-  - npm run lint
-  - npm run test
-  - npm run e2e
-  - npm run build
-
+- npm run lint
+- npm run test
+- npm run e2e
+- npm run build
+deploy:
+  skip_clean: true
+  edge: true
+  firebase:
+    token:
+      secure: zLi3bKgSpWIOqHs5wQGSo+Vo8aBazN2xeeaimdbYWMNT/AO98zxnKN5OPrH/z9dRJ4c5BGHy1GFTmRgSQ0nQgh3j1drAxt5UEfYxNtFnBUg3UQHh2W9/29OBPqhyPGhI2OluXHEkcCUFDq2hZE5HwoXGm1Na0x9yfXkWqEr6IT4k40SKbToxQnw3TnNXjvJ7v3PG8tdKstPvWj0gjRAB9ZUQCyS18e8lrfsu8lJUPjLWMQSGgy8zEe8kDN07lm86zjnXnm52XTmkqMuRZ7RnFtrQcMGEAPWUGq66jRblADEQi2oS8X6l4GRuKbHaIAdSAragvONu7d6U9Fct4XsACAk9PelU6+ZBIPbF4i1qYH4uDQWpeL4lzpIOi7qN/mfpX2mxoVnVOxOBEKvorq5FIijs7XYjKRtz0V/A9YbcXkCD5xAzaC9iNYs79Hfw03m8kL8wcCv2TFA8DUNlXzXvRiJL0VeSGWSs4RGm0Lxsbm0SzhGPMqLElXiJGPC4YBQstEPu6a8mBnfuHh/6SNnwONaacxkW1VIjvqItK3j8u9eSsr0X78IKq8KusI5Al/eL8yRKlru4hPZ69LPpAbFvfE+mzjE6Ihfv/zxGlaePv5ABggeZbafqO5I2773wa0F8wDqyWK7BmI5u/6XivqV+TRWprZCXAH/AaalshVuxk0A=
