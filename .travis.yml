@@ -5,7 +5,7 @@ dist: trusty
 sudo: false
 branches:
   only:
-  - master
+    - master
 addons:
   chrome: stable
 cache:
