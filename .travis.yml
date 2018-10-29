@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+sudo: false
+branches:
+  only:
+    - master
+addons:
+  chrome: stable
+cache:
+  directories:
+    - ./node_modules
+install:
+  - npm install -g npm@latest
+  - npm install -g @angular/cli@latest
+  - npm ci
+script:
+  - npm run lint
+  - npm run test
+  - npm run build
+
